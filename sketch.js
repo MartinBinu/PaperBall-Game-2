@@ -7,7 +7,7 @@ var ground,paperball,dustbin1,dustbin2,dustbin3;
 
 function preload()
 {
-	
+	dustbin = loadImage("dustbingreen.png");
 }
 
 function setup() {
@@ -15,7 +15,7 @@ function setup() {
    engine = Engine.create();
    world = engine.world;
    ground = new Ground(600,350,1200,10);
-   paperball = new PaperBall(200,329,34);
+   paperball = new PaperBall(200,340);
    dustbin1 = new Dustbin(1100,245,20,200,);
    dustbin2 = new Dustbin(990,335,200,20);
    dustbin3 = new Dustbin(880,245,20,200);
@@ -26,7 +26,7 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background("white");
   ground.display();
   paperball.display();
   dustbin1.display();
@@ -38,7 +38,8 @@ function draw() {
 function keyPressed(){
 
 	if(keyCode === UP_ARROW){
-	  Matter.Body.applyForce(paperball.body,paperball.body.position,{x: 85,y: -85});
+    Matter.Body.applyForce(paperball.body,paperball.body.position,{x: 45,y: -45});
+    //1000,145,150,200
 	}
- 
+   
  }
